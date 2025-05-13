@@ -15,7 +15,6 @@
       margin: 0;
       padding: 0;
       overflow: hidden;
-      /* ป้องกันการเลื่อน */
       height: 100vh;
       width: 100vw;
       font-family: 'Segoe UI', sans-serif;
@@ -23,15 +22,13 @@
     }
 
     nav {
-      padding: 20px 60px;
+      padding: 20px 30px;
     }
 
     .navbar-brand {
       font-weight: bold;
       font-size: 2.5rem;
       color: white;
-      position: relative;
-      display: inline-block;
       transition: all 0.4s ease;
       animation: glowPulse 2s infinite;
     }
@@ -155,12 +152,6 @@
       max-width: 100%;
     }
 
-    .navbar-nav {
-      position: absolute;
-      right: 4%;
-      bottom: 13%;
-    }
-
     @media (max-width: 1200px) {
       .hero {
         padding: 30px;
@@ -198,87 +189,23 @@
       }
     }
 
-    @media (orientation: portrait),
-    (max-width: 920px) {
-      @media (max-width: 920px) {
-        .navbar-nav {
-          flex-direction: row !important;
-          justify-content: center !important;
-          position: static !important;
-          margin-top: 0 !important;
-          width: 100%;
-        }
-
-        .navbar-nav .nav-item {
-          margin: 0 10px;
-        }
-
-        nav.navbar {
-          padding: 10px 20px;
-        }
-
-        .navbar-collapse {
-          justify-content: center !important;
-        }
-
-        .ms-auto {
-          margin-left: auto !important;
-          margin-right: auto !important;
-        }
-      }
-
-      .hero {
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        padding: 2rem 1rem;
-        text-align: center;
-      }
-
-      .hero-text {
-        text-align: center;
-        margin-top: 1rem;
-      }
-
-      .profile-img {
-        width: 18rem;
-        height: 18rem;
-        margin-bottom: 1rem;
-      }
-
-      .container {
-        padding: 0;
-        margin: 0 auto;
-        max-width: 100%;
-      }
-
-      .hero .container h1 {
-        font-size: 2.5rem;
-      }
-
-      .hero .container h4 {
-        font-size: 1.5rem;
-      }
-
-      .typing {
-        font-size: 1.4rem;
-      }
-
-      .navbar {
-        justify-content: center;
-        padding: 10px 0;
-      }
-
-      .navbar-nav {
-        position: static;
-        justify-content: center;
-        margin-top: 1rem;
+    @media (max-width: 416px) {
+      .navbar-nav .nav-link {
+        font-size: 1rem;
+        padding: 8px 0;
       }
 
       .navbar-brand {
-        display: block;
+        font-size: 1.8rem;
+      }
+
+      .navbar-collapse {
+        background-color: #0d1b2a;
+        padding-bottom: 1rem;
+      }
+
+      .navbar-nav {
         text-align: center;
-        width: 100%;
       }
     }
   </style>
@@ -287,15 +214,24 @@
 <body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
-    <a class="navbar-brand ms-5" href="#">SUPAWIT</a>
-    <div class="ms-auto">
-      <ul class="navbar-nav d-flex flex-row gap-4">
-        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Skills</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-      </ul>
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">SUPAWIT</a>
+      <!-- Toggle button for small screens -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Menu items -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto gap-lg-4 gap-2 mt-3 mt-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 
@@ -307,7 +243,7 @@
           <h4>Hello, It's Me</h4>
           <h1 class="fw-bold">Supawit Sittiboripat</h1>
           <h4>And I am a <span class="typing"></span></h4>
-          <h5>Welcome to MY personal website &#128075;</h5>
+          <h5>Welcome to MY personal website 👋</h5>
           <div class="social-icons my-3">
             <span class="icon-circle"><i class="bi bi-instagram"></i></span>
             <span class="icon-circle"><i class="bi bi-whatsapp"></i></span>
@@ -357,6 +293,9 @@
 
     type();
   </script>
+
+  <!-- Bootstrap JS for toggle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
